@@ -1,0 +1,12 @@
+# Identity implementation
+Dedicated Supabase project: sfvzaibhmprsnzzurxns. Public browser configuration contains only a publishable key. Email credentials go directly to Supabase Auth. Only confirmed email JWTs accepted by identity function. Passwords and Supabase tokens are not persisted by Veyra.
+
+NEAR mainnet NEP-413 message signatures use 32-byte nonce, fixed production recipient and callback, five-minute persisted challenges bound to a browser secret, SHA256/Borsh/Ed25519 verification, and final RPC FullAccess-key ownership check. Each successful challenge is consumed atomically. Ed25519 wallets only; unsupported keys fail closed. Connector pinned to 0.12.0 via esm.sh; wallet executors are a third-party runtime trust dependency. Wallet callbacks and each supported wallet need live user verification.
+
+Veyra opaque sessions are stored in sessionStorage (tab-scoped), SHA256-hashed in the database, expire after eight hours, and are revoked on logout. All profile/identity reads pass through the server. Browser XSS remains a risk to any bearer session; no production capital is managed. Linking requires an account session created within ten minutes plus fresh wallet proof or verified email credentials. Existing identities belonging to other accounts are rejected; no automatic account merges. A wallet-only account can link an unused verified email; email-first accounts can link an unused wallet. Never grant credit from wallet connection events.
+
+Identity tables have RLS enabled, no client grants or policies, and no client-callable privileged functions. Only service-role server code can access them. No SECURITY DEFINER functions. RLS-no-policy advisor notices are intentional deny-all. Challenges are throttled per hashed observed IP; robust edge rate limits, expired-row cleanup and CAPTCHA before public growth are follow-ups.
+
+Trading balances and attempts are still browser-local synthetic demos, separate from authenticated profile storage. Never treat their scores as verified. Server ledger migration remains pending.
+
+Email setup: Configure site URL https://veyra-six-weld.vercel.app and redirect allowlist for that origin. Keep email confirmation enabled. Configure custom SMTP before general public signup: default hosted mail delivery may be restricted to organization members and has low rate limits. Don't disable confirmation to bypass email delivery. Verify email signup, confirmation, sign-in, linking and logout using consenting test identities; do not claim fully tested real-email delivery without that check.
