@@ -16,3 +16,5 @@ async function initConnector(){if(!connector){const {NearConnector}=await import
 }
 
 if(sessionStorage.getItem("veyra-wallet-challenge"))initConnector().catch(()=>window.dispatchEvent(new CustomEvent("veyra-auth-error",{detail:"Wallet return could not be restored. Please sign in again."})));
+
+export async function claimCredits(){const d=await identity("claim");profile=(await identity("profile")).profile;return d.attempt}

@@ -28,9 +28,10 @@ Deno.serve(async req=>{const headers={'Access-Control-Allow-Origin':ORIGIN,'Acce
   await db('rpc/veyra_wallet_login','POST',{challenge_id:c.id,proof_hash:c.browser_hash,wallet_id:b.accountId,new_hash:tokenHash});return reply({token});
  }
  if(!current)return reply({error:'Sign in required'},401);
+ if(b.action==='claim'){const attempt=await db('rpc/veyra_claim_credits','POST',{owner:current.owner_id});return reply({attempt})}
  if(b.action==='logout'){await db('veyra_sessions?token_hash=eq.'+await hash(b.session),'DELETE');return reply({ok:true})}
  if(b.action==='profile'&&b.update){const name=String(b.update.display_name||'').trim();if(!name||name.length>40)throw Error('Display name must be 1–40 characters');await db('veyra_accounts?id=eq.'+current.owner_id,'PATCH',{display_name:name,bio:String(b.update.bio||'').slice(0,240)})}
- if(b.action==='profile'){const rows=await db('veyra_accounts?id=eq.'+current.owner_id+'&select=id,display_name,bio,auth_user_id');const p=rows[0];const wallets=await db('veyra_wallets?owner_id=eq.'+current.owner_id+'&select=account_id');return reply({profile:{id:p.id,display_name:p.display_name,bio:p.bio,emailLinked:!!p.auth_user_id,wallets:wallets.map((w:{account_id:string})=>w.account_id)}})}
+ if(b.action==='profile'){const rows=await db('veyra_accounts?id=eq.'+current.owner_id+'&select=id,display_name,bio,auth_user_id,funding_attempt');const p=rows[0];const wallets=await db('veyra_wallets?owner_id=eq.'+current.owner_id+'&select=account_id');return reply({profile:{id:p.id,display_name:p.display_name,bio:p.bio,emailLinked:!!p.auth_user_id,fundingAttempt:p.funding_attempt,wallets:wallets.map((w:{account_id:string})=>w.account_id)}})}
  throw Error('Unknown action');
  }catch(e){return reply({error:e instanceof Error?e.message:'Request rejected'},400)}
 });
