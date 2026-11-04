@@ -15,7 +15,7 @@ export function settle(a,market,payout){
  if(a.status!=='active')throw Error('This attempt is closed.');
  if(!Number.isFinite(payout)||payout<0||payout>1)throw Error('Invalid payout.');
  const positions=a.positions.filter(p=>p.market===market);if(!positions.length)return a;
- for(const p of positions){a.cash+=p.shares*payout;a.settled.push({...p,pnl:p.shares*payout-p.cost});}
+ for(const p of positions){const value=p.shares*(p.side==='no'?1-payout:payout);a.cash+=value;a.settled.push({...p,pnl:value-p.cost});}
  a.positions=a.positions.filter(p=>p.market!==market);mark(a,a.cash+a.positions.reduce((s,p)=>s+p.cost,0));return a;
 }
 export function mark(a,equity){if(a.status!=='active')return a;a.equity=equity;a.peak=Math.max(a.peak,equity);if(equity<a.peak*.9||equity<a.dayStart*.95){a.status='failed';a.reason=equity<a.peak*.9?'Maximum drawdown exceeded':'Daily loss limit exceeded';a.cash=0;a.positions=[];}return a;}
