@@ -1,28 +1,39 @@
-/* Veyra visual system — midnight navy, mineral mint, editorial type. */
-:root{color-scheme:dark;--bg:#0b101c;--ink:#edf3fa;--muted:#a7b5c9;--line:#ffffff20;--blue:#92ecd2;--green:#92ecd2;--surface:#141e2f;--surface-raised:#19263a}
-body{background:radial-gradient(ellipse at 73% 8%,#132a3d 0,transparent 46%),var(--bg);color:var(--ink)}
-.topbar{background:#0b101ceb;gap:clamp(14px,3vw,40px)}.brand{color:var(--ink)}.brand span{color:#10231e;background:linear-gradient(135deg,#c6ffec,#77d5bc);box-shadow:0 0 20px #92ecd228}
-.main-nav{background:#0b101cc9}.main-nav small,.tag,.eyebrow,.landing-kicker{color:var(--blue)}
-.main-nav small,.tag{background:#92ecd217;border:1px solid #92ecd224}
+/* Veyra visual system — electric blue, hot pink and lime, editorial type. */
+:root{color-scheme:light;--bg:#ffffff;--ink:#161137;--muted:#524574;--line:#e5d9ff;--blue:#4024ee;--green:#4024ee;--surface:#ffffff;--surface-raised:#f2eaff}
+body{background:radial-gradient(ellipse at 73% 8%,#f7e2ff 0,transparent 46%),var(--bg);color:var(--ink)}
+.topbar{background:#ffffffeb;gap:clamp(14px,3vw,40px)}.brand{color:var(--ink)}.brand span{color:#ffffff;background:linear-gradient(135deg,#6b31ff,#4324f5);box-shadow:0 0 20px #4024ee28}
+.main-nav{background:#ffffffc9}.main-nav small,.tag,.eyebrow,.landing-kicker{color:var(--blue)}
+.main-nav small,.tag{background:#4024ee17;border:1px solid #4024ee24}
 button,input,select,textarea,.topbar>input,.market-toolbar select{background:var(--surface);color:var(--ink);border-color:var(--line)}
-::placeholder{color:#9aa9c0}.topbar>input{border:1px solid var(--line)}
-button:hover{background:var(--surface-raised)}.primary,.primary:hover{color:#10251f;background:#92ecd2;box-shadow:0 6px 22px #92ecd21c}.primary:hover{background:#bcfbe7}
+::placeholder{color:#67568c}.topbar>input{border:1px solid var(--line)}
+button:hover{background:var(--surface-raised)}.primary,.primary:hover{color:#ffffff;background:#4024ee;box-shadow:0 6px 22px #4024ee1c}.primary:hover{background:#6028e7}
 .secondary,.audience-grid a,.near-banner a{color:var(--blue)}
 .categories button,.market-toolbar button.selected,.wallet-button{background:var(--surface-raised);color:var(--ink)}
-.categories .selected{color:var(--blue);background:#92ecd219}
-.panel,.market-card,dialog{background:linear-gradient(155deg,#19253a,#121b2b 78%);color:var(--ink);border-color:var(--line);border-radius:16px}
-.market-card:hover{border-color:#92ecd265;box-shadow:0 12px 28px #0003}.market-icon{color:#16263b}
-.outcomes button{background:#2bbd9424;color:#a8f5da}.outcomes button:nth-child(2){background:#f2768924;color:#ffb4c0}.outcomes .chosen{box-shadow:inset 0 0 0 1px currentColor}
+.categories .selected{color:var(--blue);background:#4024ee19}
+.panel,.market-card,dialog{background:linear-gradient(155deg,#ffffff,#faf4ff 78%);color:var(--ink);border-color:var(--line);border-radius:16px}
+.market-card:hover{border-color:#4024ee65;box-shadow:0 12px 28px #0003}.market-icon{color:#29126a}
+.outcomes button{background:#deffa3;color:#244400}.outcomes button:nth-child(2){background:#ffdaee;color:#9c0052}.outcomes .chosen{box-shadow:inset 0 0 0 1px currentColor}
 .landing{max-width:1220px}.landing-hero{position:relative;isolation:isolate;gap:clamp(30px,6vw,90px);padding-block:clamp(40px,7vw,100px)}
-.landing-hero::before{content:'';position:absolute;inset:0 0 0 38%;z-index:-1;background:radial-gradient(ellipse,#7edec425,transparent 68%),linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:auto,36px 36px,36px 36px;mask-image:radial-gradient(ellipse,#000,transparent 74%);pointer-events:none}
+.landing-hero::before{content:'';position:absolute;inset:0 0 0 38%;z-index:-1;background:radial-gradient(ellipse,#ff3cb455,transparent 68%),linear-gradient(#6533ff20 1px,transparent 1px),linear-gradient(90deg,#6533ff20 1px,transparent 1px);background-size:auto,36px 36px,36px 36px;mask-image:radial-gradient(ellipse,#000,transparent 74%);pointer-events:none}
 .landing-hero h1{font-size:clamp(43px,6.5vw,88px);letter-spacing:-.074em;line-height:1.02;color:var(--ink)}.landing-hero h1 em{font-style:normal;color:var(--blue)}
 .landing-kicker,.preview-top,.preview-rank small,.eyebrow{font-family:ui-monospace,monospace;letter-spacing:.115em}.landing-hero>div>p{font-size:clamp(14px,1.6vw,17px)}
-.journey-preview{transform:none;background:linear-gradient(145deg,#223b4b,#142033 68%);border:1px solid #91e4d344;border-radius:24px;box-shadow:0 28px 90px #0006,inset 0 1px #fff1}
-.preview-rank>span{display:grid;place-items:center;filter:drop-shadow(0 0 22px #92ecd244)}.preview-step>span,.how-grid article>span{background:#92ecd219;color:var(--blue)}
+.journey-preview{transform:none;background:linear-gradient(145deg,#fff5fd,#eadfff 68%);border:1px solid #aa77ff77;border-radius:24px;box-shadow:0 28px 90px #6011e724,inset 0 1px #fff1}
+.preview-rank>span{display:grid;place-items:center;filter:drop-shadow(0 0 22px #4024ee44)}.preview-step>span,.how-grid article>span{background:#4024ee19;color:var(--blue)}
 .landing-strip{background:#ffffff04}.landing-section h2,.landing-cta h2{letter-spacing:-.045em}
-.how-grid article,.standards-grid>div,.audience-grid article{padding:clamp(16px,2.2vw,28px);background:linear-gradient(145deg,#162438,#111a29);border:1px solid var(--line);border-radius:16px}
-.status-note,.near-banner,.landing-cta,.profile-funding,#auth-message{background:#152a36;color:var(--ink);border-color:#92ecd22d}
-.landing-cta{border:1px solid #92ecd233;background:radial-gradient(ellipse at top,#23483f,#142034 74%)}.silver-icon,.mini-gem{color:var(--blue)}
-#toast{background:#1d3a38;color:#e1fff6;border:1px solid #92ecd244}.fine,.card-bottom,.simulation{color:var(--muted)}
+.how-grid article,.standards-grid>div,.audience-grid article{padding:clamp(16px,2.2vw,28px);background:linear-gradient(145deg,#ffffff,#f3e9ff);border:1px solid var(--line);border-radius:16px}
+.status-note,.near-banner,.landing-cta,.profile-funding,#auth-message{background:#f5eaff;color:var(--ink);border-color:#4024ee2d}
+.landing-cta{border:1px solid #4024ee33;background:radial-gradient(ellipse at top,#ffcef0,#e7d9ff 74%)}.silver-icon,.mini-gem{color:var(--blue)}
+#toast{background:#4024ee;color:#ffffff;border:1px solid #4024ee44}.fine,.card-bottom,.simulation{color:var(--muted)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 @media(max-width:600px){.landing-hero{padding-block:32px}.landing-hero h1{font-size:clamp(40px,11vw,58px)}.landing-hero::before{inset:10% 0 0}.journey-preview{padding:20px}.topbar{gap:12px}.how-grid{gap:12px}}
+
+/* Saturated color blocks are reserved for the overview; trading stays legible. */
+.landing-hero h1 em{color:#5822e8}
+.landing-kicker{display:inline-block;padding:7px 11px;border-radius:99px;background:#ffe3f3;color:#9c0052}
+.journey-preview{background:linear-gradient(135deg,#fff 12%,#ffe1f6 62%,#e6d9ff);box-shadow:0 24px 65px #6b31ff25}
+.preview-top .tag{background:#dcff65;color:#263900;border-color:#b3d92b}
+.landing-strip{background:linear-gradient(90deg,#e0ff81,#f3ffba);border:1px solid #c1eb4c;border-radius:14px}
+.how-grid article:nth-child(2n){background:#fff0fb}.how-grid article:nth-child(3n){background:#f1ffd0}
+.landing-cta{background:linear-gradient(120deg,#5021ed,#8a22e7 62%,#b00678);color:#fff}
+.landing-cta h2,.landing-cta p{color:#fff}.landing-cta .primary{background:#deff64;color:#261442}
+.primary:disabled{opacity:.6}.brand span{box-shadow:none}
