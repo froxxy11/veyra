@@ -1,0 +1,28 @@
+/* Veyra visual system — midnight navy, mineral mint, editorial type. */
+:root{color-scheme:dark;--bg:#0b101c;--ink:#edf3fa;--muted:#a7b5c9;--line:#ffffff20;--blue:#92ecd2;--green:#92ecd2;--surface:#141e2f;--surface-raised:#19263a}
+body{background:radial-gradient(ellipse at 73% 8%,#132a3d 0,transparent 46%),var(--bg);color:var(--ink)}
+.topbar{background:#0b101ceb;gap:clamp(14px,3vw,40px)}.brand{color:var(--ink)}.brand span{color:#10231e;background:linear-gradient(135deg,#c6ffec,#77d5bc);box-shadow:0 0 20px #92ecd228}
+.main-nav{background:#0b101cc9}.main-nav small,.tag,.eyebrow,.landing-kicker{color:var(--blue)}
+.main-nav small,.tag{background:#92ecd217;border:1px solid #92ecd224}
+button,input,select,textarea,.topbar>input,.market-toolbar select{background:var(--surface);color:var(--ink);border-color:var(--line)}
+::placeholder{color:#9aa9c0}.topbar>input{border:1px solid var(--line)}
+button:hover{background:var(--surface-raised)}.primary,.primary:hover{color:#10251f;background:#92ecd2;box-shadow:0 6px 22px #92ecd21c}.primary:hover{background:#bcfbe7}
+.secondary,.audience-grid a,.near-banner a{color:var(--blue)}
+.categories button,.market-toolbar button.selected,.wallet-button{background:var(--surface-raised);color:var(--ink)}
+.categories .selected{color:var(--blue);background:#92ecd219}
+.panel,.market-card,dialog{background:linear-gradient(155deg,#19253a,#121b2b 78%);color:var(--ink);border-color:var(--line);border-radius:16px}
+.market-card:hover{border-color:#92ecd265;box-shadow:0 12px 28px #0003}.market-icon{color:#16263b}
+.outcomes button{background:#2bbd9424;color:#a8f5da}.outcomes button:nth-child(2){background:#f2768924;color:#ffb4c0}.outcomes .chosen{box-shadow:inset 0 0 0 1px currentColor}
+.landing{max-width:1220px}.landing-hero{position:relative;isolation:isolate;gap:clamp(30px,6vw,90px);padding-block:clamp(40px,7vw,100px)}
+.landing-hero::before{content:'';position:absolute;inset:0 0 0 38%;z-index:-1;background:radial-gradient(ellipse,#7edec425,transparent 68%),linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:auto,36px 36px,36px 36px;mask-image:radial-gradient(ellipse,#000,transparent 74%);pointer-events:none}
+.landing-hero h1{font-size:clamp(43px,6.5vw,88px);letter-spacing:-.074em;line-height:1.02;color:var(--ink)}.landing-hero h1 em{font-style:normal;color:var(--blue)}
+.landing-kicker,.preview-top,.preview-rank small,.eyebrow{font-family:ui-monospace,monospace;letter-spacing:.115em}.landing-hero>div>p{font-size:clamp(14px,1.6vw,17px)}
+.journey-preview{transform:none;background:linear-gradient(145deg,#223b4b,#142033 68%);border:1px solid #91e4d344;border-radius:24px;box-shadow:0 28px 90px #0006,inset 0 1px #fff1}
+.preview-rank>span{display:grid;place-items:center;filter:drop-shadow(0 0 22px #92ecd244)}.preview-step>span,.how-grid article>span{background:#92ecd219;color:var(--blue)}
+.landing-strip{background:#ffffff04}.landing-section h2,.landing-cta h2{letter-spacing:-.045em}
+.how-grid article,.standards-grid>div,.audience-grid article{padding:clamp(16px,2.2vw,28px);background:linear-gradient(145deg,#162438,#111a29);border:1px solid var(--line);border-radius:16px}
+.status-note,.near-banner,.landing-cta,.profile-funding,#auth-message{background:#152a36;color:var(--ink);border-color:#92ecd22d}
+.landing-cta{border:1px solid #92ecd233;background:radial-gradient(ellipse at top,#23483f,#142034 74%)}.silver-icon,.mini-gem{color:var(--blue)}
+#toast{background:#1d3a38;color:#e1fff6;border:1px solid #92ecd244}.fine,.card-bottom,.simulation{color:var(--muted)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+@media(max-width:600px){.landing-hero{padding-block:32px}.landing-hero h1{font-size:clamp(40px,11vw,58px)}.landing-hero::before{inset:10% 0 0}.journey-preview{padding:20px}.topbar{gap:12px}.how-grid{gap:12px}}
