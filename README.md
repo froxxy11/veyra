@@ -22,3 +22,9 @@ Polymarket and Kalshi live connectors need licensing clarification/authorization
 6. Replay scenarios isolated from live credentials and public profiles.
 
 See docs/PRD.md for the agreed product scope.
+
+### Hackathon demo: verify a Silver report
+
+Open **Evaluations → Silver evaluation report → Verify on NEAR**. This replay requires no login and never touches account balances. It evaluates 15 synthetic trades using the draft Silver policy. The browser recomputes the report and its SHA-256 fingerprint, checks the finalized testnet transaction arguments, and offers an explorer link.
+
+The proof is a fixed demo commitment, not a credential, production rank, external market attestation, or on-chain trading engine. The testnet contract is a no-op; the fingerprint is in the successful transaction's call arguments. Verification is read-only and doesn't require wallet approval. Testnet publishing is reproducible with `node scripts/anchor-demo.mjs` (creates a fresh faucet-funded testnet account; no mainnet funds).
