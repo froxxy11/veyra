@@ -37,3 +37,25 @@ button:hover{background:var(--surface-raised)}.primary,.primary:hover{color:#fff
 .landing-cta{background:linear-gradient(120deg,#5021ed,#8a22e7 62%,#b00678);color:#fff}
 .landing-cta h2,.landing-cta p{color:#fff}.landing-cta .primary{background:#deff64;color:#261442}
 .primary:disabled{opacity:.6}.brand span{box-shadow:none}
+
+/* Conversion-inspired: near-black canvas, ember orange and sharp white type. */
+:root{color-scheme:dark;--bg:#0a0a0a;--ink:#faf9f6;--muted:#bcbab6;--line:#ffffff26;--blue:#ff855a;--green:#89f0a9;--surface:#161616;--surface-raised:#24211f}
+body{background:var(--bg)}
+.topbar,.main-nav{background:#0a0a0af2}.brand span{background:#ff5633;color:#100a07}
+::placeholder{color:#aaa6a1}
+.primary,.primary:hover{background:#ff653e;color:#170905;box-shadow:none}.primary:hover{background:#ff916e}
+.landing-hero{padding-block:clamp(46px,8vw,112px)}
+.landing-hero h1 em{color:#ff714d}
+.landing-kicker,.tag,.main-nav small{background:#ff653e1b;color:#ff9b7c;border-color:#ff653e45}
+.landing-hero::before{background:radial-gradient(ellipse at 70% 45%,#ff471b55,transparent 65%),linear-gradient(#ff79551b 1px,transparent 1px),linear-gradient(90deg,#ff79551b 1px,transparent 1px);background-size:auto,36px 36px,36px 36px}
+.journey-preview{background:linear-gradient(145deg,#35201b,#171313 55%,#171717);border-color:#ff795555;box-shadow:0 24px 70px #ff471b17,inset 0 1px #ffffff1a}
+.preview-top .tag{background:#ff653e22;color:#ffac8e;border-color:#ff653e45}
+.preview-rank>span{filter:drop-shadow(0 0 18px #ff653e55)}
+.preview-step>span,.how-grid article>span,.categories .selected{background:#ff653e22;color:#ff9b7c}
+.landing-strip{background:#181311;border-color:#ff653e44}.landing-strip strong{color:#ff956f}
+.panel,.market-card,dialog,.how-grid article,.how-grid article:nth-child(n),.standards-grid>div,.audience-grid article{background:linear-gradient(155deg,#211b18,#151515 76%);border-color:var(--line)}
+.market-card:hover{border-color:#ff855a88;box-shadow:0 12px 28px #0005}
+.outcomes button{background:#37db872a;color:#9df5b8}.outcomes button:nth-child(2){background:#ff52652b;color:#ff9cac}
+.status-note,.near-banner,.profile-funding,#auth-message{background:#241814;color:var(--ink);border-color:#ff653e45}
+.landing-cta{background:radial-gradient(ellipse at top right,#a12b11,#301710 66%);border-color:#ff653e55}.landing-cta .primary{background:#ff7954;color:#170905}
+#toast{background:#241814;color:#fff;border-color:#ff653e55}
