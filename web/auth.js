@@ -7,7 +7,7 @@ export async function restore(){if(!sessionStorage.getItem('veyra-session'))retu
 async function emailRequest(path,body){const r=await fetch(BASE+'/auth/v1/'+path,{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw Error(d.msg||d.error_description||d.message||'Email request failed');return d}
 export async function emailLogin(email,password,link=false){const d=await emailRequest('token?grant_type=password',{email,password});const result=await identity('email',{access_token:d.access_token,link});await accept(result.token);}
 export async function emailSignup(email,password){return emailRequest('signup',{email,password});}
-export async function saveAccount(display_name,bio){profile=(await identity('profile',{update:{display_name,bio}})).profile;window.dispatchEvent(new Event('veyra-auth'))}
+export async function saveAccount(display_name,bio,contact){profile=(await identity('profile',{update:{display_name,bio,...contact}})).profile;window.dispatchEvent(new Event('veyra-auth'))}
 export async function logout(){try{await identity('logout')}finally{profile=null;sessionStorage.removeItem('veyra-session');window.dispatchEvent(new Event('veyra-auth'))}}
 export async function walletLogin(link=false){const c=await identity('challenge',{link});sessionStorage.setItem('veyra-wallet-challenge',JSON.stringify(c));await initConnector();
  await connector.connect({signMessageParams:{message:c.message,recipient:c.recipient,nonce:Uint8Array.from(atob(c.nonce),x=>x.charCodeAt(0)),callbackUrl:c.callbackUrl,state:c.id}});
